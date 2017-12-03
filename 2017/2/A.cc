@@ -6,7 +6,7 @@ int main() {
     string line;
     int sum = 0;
     while (getline(cin, line)) {
-        vi v = split<int>(line);
+        auto v = parseInt(split(line));
         sum += *max_element(v.begin(), v.end()) - *min_element(v.begin(), v.end());
     }
     cout << sum << endl;

@@ -6,7 +6,7 @@ int main() {
     string line;
     int sum = 0;
     while (getline(cin, line)) {
-        vi v = split<int>(line);
+        auto v = parseInt(split(line));
         for (int x : v) {
             for (int y : v) {
                 if (x > y && x % y == 0) sum += x/y;

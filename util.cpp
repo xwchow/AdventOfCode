@@ -1,11 +1,26 @@
 #include "util.hpp"
 
+vector<string> split(const string& inp, char delim) {
+    bool ws = delim == ' ';
+    vector<string> res;
+    string cur;
+    for (char c : inp) {
+        if (c == delim || (ws && isspace(c))) {
+            if (cur.size() || !ws) res.push_back(cur);
+            cur = "";
+        }
+        else cur += c;
+    }
+    if (cur.size() || !ws) res.push_back(cur);
+    return res;
+}
+
 bool startsWith(const string& line, string s) {
     return line.substr(0, s.size()) == s; 
 }
 
 // https://stackoverflow.com/questions/2844817/how-do-i-check-if-a-c-string-is-an-int
-bool isInt(const std::string & s)
+bool isInt(const std::string& s)
 {
    if(s.empty() || ((!isdigit(s[0])) && (s[0] != '-') && (s[0] != '+'))) return false ;
 

@@ -15,19 +15,7 @@ ostream& operator<<(ostream& o, vector<T>& v) {
     return o;
 }
 
-template<typename T>
-vector<T> split(const string& inp, char delim=',') {
-    vector<T> res;
-    istringstream ss(inp);
-    T value;
-    while (ss >> value) {
-        res.push_back(value);
-        if (ss.peek() == delim)
-            ss.ignore();
-    }
-    return res;
-}
-
+vector<string> split(const string& inp, char delim=' ');
 bool startsWith(const string& line, string s);
 
 bool isInt(const std::string & s);
