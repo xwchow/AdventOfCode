@@ -7,6 +7,7 @@ typedef long long ll;
 typedef pair<int, int> pii;
 typedef vector<int> vi;
 typedef vector<vi> vvi;
+typedef vector<string> vs;
 
 #define debug(x) cerr << #x << " = " << (x) << endl;
 template<typename T>
