@@ -2,20 +2,15 @@
 
 map<string, int> regs;
 bool eval(vs& words) {
+    string op = words[5];
     int val = regs[words[4]];
     int cmp = stoi(words.back());
-    if (words[5] == ">") {
-        return val > cmp;
-    } else if (words[5] == "<") {
-        return val < cmp;
-    } else if (words[5] == ">=") {
-        return val >= cmp;
-    } else if (words[5] == "<=") {
-        return val <= cmp;
-    } else if (words[5] == "!=") {
-        return val != cmp;
-    }
-    return val == cmp;
+    if (op == ">") return val > cmp;
+    else if (op == "<") return val < cmp;
+    else if (op == ">=") return val >= cmp;
+    else if (op == "<=") return val <= cmp;
+    else if (op == "!=") return val != cmp;
+    else if (op == "==") return val == cmp;
 }
 
 int main() {
