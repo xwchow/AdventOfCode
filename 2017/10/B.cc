@@ -8,14 +8,6 @@ void rev(vi &arr, int id, int x) {
     }
 }
 
-string HEX = "0123456789abcdef";
-string toHex(int val) {
-    string res;
-    res += HEX[val / 16];
-    res += HEX[val % 16];
-    return res;
-}
-
 int main() {
     std::ios_base::sync_with_stdio(false); cin.tie(0);
     string line; cin >> line;
@@ -38,15 +30,14 @@ int main() {
         }
     }
 
-    string hash;
     for (int i = 0; i < n; i += 16) {
         int val = 0;
         for (int j = 0; j < 16; j++) {
             val ^= arr[i + j];
         }
-        hash += toHex(val);
+        printf("%02x", val);
     }
-    cout << hash << endl;
+    printf("\n");
     
 }
 
