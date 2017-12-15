@@ -16,6 +16,8 @@ ostream& operator<<(ostream& o, vector<T>& v) {
     return o;
 }
 
+const string HEX = "0123456789abcdef";
+
 vector<string> split(const string& inp, char delim=' ');
 bool startsWith(const string& line, string s);
 
@@ -23,3 +25,5 @@ bool isInt(const std::string & s);
 vi parseInt(const vector<string>& words);
 vector<char> parseChar(const vector<string>& words);
 
+void rev(vi &arr, int id, int x);
+string knotHash(const string& input, int k = 256, int rounds = 64);

@@ -45,3 +45,39 @@ vector<char> parseChar(const vector<string>& words) {
     }
     return res;
 }
+
+void rev(vi &arr, int id, int x) {
+    int n = (int)arr.size();
+    for (int i = 0; i < x/2; i++) {
+        int L = (id + i) % n;
+        int R = (id + x - 1 - i) % n + n % n;
+        swap(arr[L], arr[R]);
+    }
+}
+
+string knotHash(const string& input, int k, int rounds) {
+    vi lens;
+    for (char c : input) lens.push_back(c);
+    lens.insert(lens.end(), {17, 31, 73, 47, 23});
+
+    vi arr(k);
+    iota(arr.begin(), arr.end(), 0);
+    int id = 0, skip = 0;
+    for (int round = 0; round < rounds; round++) {
+        for (int x : lens) {
+            rev(arr, id, x);
+            id = (id + x + skip) % k;
+            skip++;
+        }
+    }
+
+    ostringstream out;
+    for (int i = 0; i < k; i += 16) {
+        int val = 0;
+        for (int j = 0; j < 16; j++) {
+            val ^= arr[i + j];
+        }
+        out << setfill('0') << setw(2) << hex << val;
+    }
+    return out.str();
+}
