@@ -9,7 +9,7 @@ int main() {
     for (string w : words) {
         if (w[0] == 's') {
             int rot = stoi(w.substr(1)) % 16;
-            rotate(progs.begin(), progs.begin() + 16 - rot, progs.end());
+            rotate(progs.begin(), progs.end() - rot, progs.end());
         } else if (w[0] == 'x') {
             vi v = parseInt(split(w.substr(1), '/'));
             int A = v[0], B = v[1];
