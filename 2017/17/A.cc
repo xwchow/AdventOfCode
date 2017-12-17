@@ -4,6 +4,8 @@ int main() {
     std::ios_base::sync_with_stdio(false); cin.tie(0);
 
     int n; cin >> n;
+    int k = 2017;
+    
     int pos = 0;
     vi v = {0};
     int last = 0;
@@ -12,7 +14,6 @@ int main() {
         v.insert(v.begin() + pos, i);
         last = v[(pos + 1) % v.size()];
     }
-    debug(v);
     cout << last << endl;
 }
 
