@@ -9,7 +9,7 @@ int main() {
     int pos = 0;
     vi v = {0};
     int last = 0;
-    for (int i = 1; i <= 2017; i++) {
+    for (int i = 1; i <= k; i++) {
         pos = (pos + n + 1) % v.size();
         v.insert(v.begin() + pos, i);
         last = v[(pos + 1) % v.size()];
