@@ -1,4 +1,4 @@
-#include "../../util.hpp"
+#include "../../includes/util.hpp"
 
 queue<ll> q[2];
 ll regs[2][26];

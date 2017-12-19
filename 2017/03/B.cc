@@ -1,4 +1,4 @@
-#include "../../util.hpp"
+#include "../../includes/util.hpp"
 
 
 int grid[1000][1000];
