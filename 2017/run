@@ -1,0 +1,11 @@
+clear; clear;
+
+g++ ../../includes/md5.cpp ../../includes/util.cpp $1 -g -std=c++14 -Wall -Wconversion -Wshadow -fsanitize=address,undefined -o sol || exit
+
+inp=input
+if [ "$#" -eq 2 ]; then
+    inp=$2
+fi
+
+./sol < $inp | tee output
+xclip -sel clip < output
