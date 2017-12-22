@@ -81,3 +81,17 @@ string knotHash(const string& input, int k, int rounds) {
     }
     return out.str();
 }
+
+string join(vs lines, string str) {
+    string res;
+    int n = lines.size();
+    for (int i = 0; i < n; i++) {
+        res += lines[i];
+        if (i != n-1) res += str;
+    }
+    return res;
+}
+
+string join(vs lines, char c) {
+    return join(lines, string(1, c));
+}

@@ -27,3 +27,6 @@ vector<char> parseChar(const vector<string>& words);
 
 void rev(vi &arr, int id, int x);
 string knotHash(const string& input, int k = 256, int rounds = 64);
+
+string join(vs lines, string str);
+string join(vs lines, char c);
