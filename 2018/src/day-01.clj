@@ -1,4 +1,4 @@
-(ns day-01
+(ns aoc-2018.day-01
   (:require [clojure.string :as str]))
 
 (try (def in (slurp "input/1.in"))
@@ -7,10 +7,11 @@
 (def vs (map #(Integer/parseInt %) (str/split-lines in)))
 
 ;; part 1
-(reduce + vs)
+(defn part1 [] (reduce + vs))
 
 ;; part 2
-(loop [rem-vs (cycle vs)
+(defn part2 []
+  (loop [rem-vs (cycle vs)
        total 0
        seen-set #{}]
   (let [x (first rem-vs)]
@@ -18,5 +19,8 @@
       total
       (recur (rest rem-vs)
              (+ total x)
-             (conj seen-set total)))))
+             (conj seen-set total))))))
+
+(println (part1))
+(println (part2))
 
