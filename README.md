@@ -1,4 +1,9 @@
-# AdventOfCode
-* [Advent of Code 2017](https://adventofcode.com/2017/) in C++
-* [Advent of Code 2018](https://adventofcode.com/2018/) in Clojure 
+## AdventOfCode 2017 (C++)
+Solutions in C++
+
+## AdventOfCode 2018 (Clojure)
+Solutions in Clojure
+
+Running the code should be as simple as:  
+`lein exec src/day-01.clj`
 
