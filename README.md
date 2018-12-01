@@ -1,4 +1,4 @@
 # AdventOfCode
-C++ solutions for [Advent of Code 2017](https://adventofcode.com/2017/) at time of release.
+* [Advent of Code 2017](https://adventofcode.com/2017/) in C++
+* [Advent of Code 2018](https://adventofcode.com/2018/) in Clojure 
 
-Might include solutions in Python for practice.
